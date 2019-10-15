@@ -11,13 +11,16 @@ html(lang="ru")
   body
     .wrapper
       .container
-        section.section.main
-          .content
+        .fullscreen-section
+          section.paralax
+            +image('content/bg/bg_layout_1.png', 'first')
+            +image('content/bg/bg_layout_2.png', 'second')
+            +image('content/bg/bg_layout_3.png', 'third')
+          section.section.main
             include ./layout/header.pug
             include ./layout/maincontent.pug
             include ./layout/scroll.pug
-        section.section.aboutme
-          .content__about
+          section.section.aboutme
             include ./layout/about.pug
         section.section.skills
           .content__skills
