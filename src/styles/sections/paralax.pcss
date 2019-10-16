@@ -1,24 +1,57 @@
 .first {
-    //background-image: url(~images/content/bg/bg_layout_1.png);
+    background: url(~images/content/bg/bg_layout_1.png) no-repeat;
+    background-size: cover;
     //transform: translateY(200px);
-    z-index:0;
+    //z-index:0;
+    max-width: 100%;
 }
 
 .second {
-    //background-image: url(~images/content/bg/bg_layout_2.png);
-    transform: translateY(-536px);
-    z-index:1;
+    background: url(~images/content/bg/bg_layout_2.png) no-repeat;
+    background-size: cover;
+    //transform: translateY(-536px);
+    //z-index:1;
+    top: 20%;
+    background-position: bottom;
 }
 
 .third {
-    //background-image: url(~images/content/bg/bg_layout_3.png);
+    background: url(~images/content/bg/bg_layout_3.png) no-repeat;
+    background-size: cover;
     //background-image:linear-gradient(to top, rgba(0,0,0,0.8) 50%, transparent);
-    transform: translateY(-768px);
-    z-index:2;
+    //transform: translateY(-768px);
+    //z-index:2;
+    top: 72%;
+    background-position: bottom;
 }
 
 .paralax {
+    /* position: absolute;
+    display: flex;
+    flex-direction: column; */
+    position:fixed;
+    left:0;
+    top:0;
+    bottom:0;
+    right:0;
+    min-height:100vh;
+    z-index:-1;
+}
+
+.layer {
     position: absolute;
+    left: 0;
+    //top: 0;
+    width: 150%;
+    height: 100%;
+}
+
+// листья
+.pic_leaves {
     display: flex;
     flex-direction: column;
+}
+.pic_layer {
+    height: 100%;
+    width: 100%;
 }
