@@ -3,28 +3,310 @@
     background-repeat: no-repeat;
     background-size: cover; 
     position: relative;
-    //transform: translateY(10%);
+
+    @include tablets {
+
+    }
+
+    @include phones {
+        justify-content: center;
+    }
 }
 .content__skills {
     display: flex;
     align-items: center;
     justify-content: center;
-    flex-direction:row;
-    margin-top:150px;
+    flex-direction: row;
+    margin-top: 150px;
+
+    @include tablets {
+        flex-direction: column-reverse;
+        margin: 0 auto;
+        margin-top: 119px;
+    }
+
+    @include phones {
+        flex-direction:column-reverse;
+        margin-top:97px;
+        width: 266px;
+        align-items: center;
+    }
 }
-.skills_left {
+
+// изображение
+.skills-left {
     flex-shrink:0;
+
+    @include desktop {
+        flex-shrink: 1;
+    }
+    
+	@include tablets {
+        width: 486px;
+        height: 486px;
+        transform: rotate(-90deg) translateY(-25%);
+    }
+    
+    @include phones {
+        width: 212px;
+        height: 212px;
+        transform: rotate(-90deg) translateY(-25%);
+    }
 }
-.skills_right {
+
+// скилы и контент
+.skills-right {
     display: flex;
     flex-direction:column;
+
+    @include desktop {
+    }
+    
+	@include tablets {
+        align-items: center;
+    }
+
+    @include phones {
+        align-items: flex-start;
+    }
 }
-.title__small--skill {
+.skills-right__title {
     font-size: 30px;
     margin-top: 58px;
     margin-bottom: 60px;
+    font-weight: bold;
+    line-height: 1.2;
+    color: #ffffff;
+    
+    @include desktop {
+    }
+    
+	@include tablets {
+        margin-top: 0;
+        margin-bottom: 30px;
+        width: 272px;
+        text-align: center;
+    }
+
+    @include phones {
+        margin-bottom: 30px;
+        margin-top: 0px;
+        width: 230px;
+        font-size: 24px;
+        text-align: start;
+    }
 }
-.subtitle--skills {
+.skills-right__subtitle {
     width: 586px;
-    margin-bottom: 38px;
+    margin-bottom: 96px;
+
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 1.88;
+    color: rgba(255, 255, 255, 0.5);
+
+    @include desktop {
+    }
+    
+	@include tablets {
+        font-size: 14px;
+        margin-top: 0;
+        margin-bottom: 60px;
+        width: 450px;
+        text-align: center;
+    }
+
+    @include phones {
+        width: 266px;
+        font-size: 14px;
+        font-weight: 600;
+        line-height: 1.71;
+
+        margin-bottom: 60px;
+        text-align: start;
+    }
+}
+
+//навыки)
+.competence {
+    list-style-type: none;
+    margin-left: 130px;
+
+    @include desktop {
+        margin-left: 0px;
+    }
+    
+	@include tablets {
+	
+    }
+    
+    @include phones {
+
+    }
+}
+
+.competence__item {
+    display:flex;
+    flex-direction:column;
+    margin-bottom: 60px;
+
+    @include desktop {
+    }
+    
+	@include tablets {
+        
+    }
+    
+    @include phones {
+
+    }
+}
+
+.competence-row {
+
+}
+
+.competence-row__title {
+    font-size: 24px;
+    font-weight: bold;
+    line-height: 2;
+    color: #ffffff;
+    margin-bottom: 50px;
+
+    @include desktop {
+    }
+    
+	@include tablets {
+        display: flex;
+        justify-content: center;
+        font-size: 18px;
+    }
+    
+    @include phones {
+        margin-bottom: 35px;
+    }
+}
+
+.competence-row__list {
+    display: flex;
+
+
+    @include tablets {
+
+    }
+
+    @include phones {
+        flex-wrap: wrap;
+        margin-left: -28px;
+    }
+}
+
+.competence-row__item {
+    margin-left: 28px;
+}
+
+.competence-row__item:first-child {
+    margin-left: 0;
+
+    @include tablets {
+
+    }
+
+    @include phones {
+        margin-left: 28px;
+    }
+}
+
+// кругляшки)
+.skill {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.percentage {
+    width: 135px;
+    height: 135px;
+    transform: rotate(-180deg);
+
+    @include desktop {
+
+	}
+	@include tablets {
+        width: 112px;
+        height: 112px;
+	}
+	
+	@include phones {
+	
+	}
+}
+
+.skill__circle {
+    fill: transparent;
+    stroke-width: 1px;
+    stroke: #e9e9e9;
+}
+
+.skill__circle--under {
+
+}
+
+.skill__circle--above {
+    stroke: orange;
+    stroke-dasharray: 251;
+    stroke-dashoffset: 251;
+    animation: fill 100s linear infinite;
+    animation-play-state: paused;
+    stroke-width: 6px;
+
+}
+
+    @keyframes fill {
+        from {
+            stroke-dashoffset: 251;
+        }
+
+        to {
+            stroke-dashoffset: 0;
+        }
+
+    }
+.skill__circle--above[style="animation-delay: -100s"] {
+    stroke-dashoffset: 0;
+    animation: initial;
+}
+
+.overlay {
+    position: absolute;
+    /* top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; */
+}
+
+.skill__subtitle {
+    width: 60px;
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    //line-height: 2.67;
+    color: rgba(255, 255, 255, 0.5);
+
+    @include desktop {
+
+	}
+	@include tablets {
+        font-size: 16px;
+	}
+	
+	@include phones {
+	
+	}
 }

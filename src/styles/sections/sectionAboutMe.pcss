@@ -1,61 +1,93 @@
- .aboutme {
-    //background-image:linear-gradient(to top, rgba(0,0,0,0.8) 50%, transparent), url(~images/content/bg/bg_layout_3.png);
-    //background-repeat: no-repeat;
-    //background-size: cover; 
+.aboutme {
     position: relative;
     justify-content: center;
     flex-direction: column;
-    margin-top: 150px;
-    //transform: translateY(-40%);
-} 
-
-.content__about {
-   // margin: 0 auto;
-    position: relative;
-    justify-content: center;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-   //transform: translateY(70%);
-
     background: url(~images/content/bg/bg_2.png);
     background-repeat: no-repeat;
-    background-size: cover; 
+    background-size: cover;
+} 
+.content__about {
     position: relative;
-    z-index:4;
-}
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    margin-top: 170px;
+    margin-bottom:270px;
 
+    @include desktop {
+        margin: 0 auto;
+        margin-top: 70px;
+        margin-bottom:200px;
+	}
+	@include tablets {
+        margin-top: 10px;
+        margin-bottom: 155px;
+	}
+	
+	@include phones {
+        flex-direction: column;
+        margin-bottom: 100px;
+	}
+}
+// Личная информация и фото
 .about__left {
-    margin-right: 98px;
+    margin-right: 160px;
     width: 280px;
+
+    @include tablets {
+        width: 220px;
+        margin-right: 100px;
+    }
+
+    @include phones {
+        margin-right: 0;
+        margin-bottom: 50px;
+        width: 266px;
+    }
 }
 
-.about__center {
-    margin-top:255px;
-    margin-right: 31px;
-}
-
-.about__right {
-    width: 520px;
-}
-
-.content_info {
+.content-info {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+
+    @include desktop {
+
+	}
+	@include tablets {
+
+	}
+	
+	@include phones {
+	
+	}
 }
 
-.content_info__pic {
+.content-info__pic {
     flex-shrink: 0;
     border-radius: 50%;
     overflow: hidden;
 	width: 200px;
 	height: 200px;
-	margin-bottom: 80px;
+    margin-bottom: 80px;
+    
+    @include desktop {
+
+    }
+    
+	@include tablets {
+        width: 170px;
+        height: 170px;
+        margin-bottom: 58px;
+	}
+	
+	@include phones {
+        margin-bottom: 30px;
+	}
 }
 
-.content_info__disc {
+.content-info__disc {
     display:flex;
     flex-direction:column;
 }
@@ -72,6 +104,20 @@
     line-height: 1.88;
     text-align: left;
     color: rgba(255, 255, 255, 0.15);
+
+    @include desktop {
+
+    }
+    
+	@include tablets {
+        width: 80px;
+        margin-right: 40px;
+        font-size: 14px;
+	}
+	
+	@include phones {
+	
+	}
 }
 
 .discription__right {
@@ -79,13 +125,124 @@
     line-height: 1.88;
     text-align: left;
     color: #ffffff;
+
+    @include desktop {
+
+    }
+    
+	@include tablets {
+        font-size: 14px;
+	}
+	
+	@include phones {
+	
+	}
 }
 
-.star {
+/* .star {
     width: 22px;
     height: 22px;
     font-size: 48px;
     font-style: italic;
     line-height: 0.63;
     color: rgba(219, 2, 0, 0.1);
+} */
+
+// Описание
+.about__right {
+    width: 520px;
+
+    @include tablets {
+
+    }
+
+    @include phones {
+        width: 266px;
+    }
+}
+
+.about__title {
+    font-size: 36px;
+    font-weight: bold;
+    color: #ffffff;
+    margin-bottom: 40px;
+
+    @include desktop {
+
+    }
+    
+	@include tablets {
+        font-size: 30px;
+        margin-bottom: 50px;
+	}
+	
+	@include phones {
+	
+	}
+}
+
+.about__subtitle {
+    font-size: 16px;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.5);
+    margin-bottom: 30px;
+
+    @include desktop {
+
+    }
+    
+	@include tablets {
+        font-size: 14px;
+        margin-bottom: 20px;
+	}
+	
+	@include phones {
+	
+	}
+}
+
+.about__subtitle--italic {
+    font-weight: normal;
+    font-style: italic;
+    margin-top: 80px;
+    margin-bottom: 0px;
+
+    @include desktop {
+
+	}
+	@include tablets {
+        font-size: 14px;
+        margin-top: 46px;
+	}
+	
+	@include phones {
+	
+	}
+}
+
+.about__subtitle--italic::before {
+    content: "*"; 
+    width: 22px;
+    height: 22px;
+    font-size: 48px;
+    font-style: italic;
+    line-height: 0.63;
+    color: rgba(219, 2, 0, 0.1);
+    top: 286px;
+    left: 658px;
+    position: absolute;
+
+    @include desktop {
+        left: 488px;
+	}
+	@include tablets {
+        font-size: 48px;
+        top: 232px;
+        left: 272px;
+	}
+	
+	@include phones {
+        top: 552px;
+        left: -39px;
+	}
 }

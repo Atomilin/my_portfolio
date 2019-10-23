@@ -1,42 +1,29 @@
 include ./mixins.pug
 
 <!DOCTYPE html>
-html(lang="ru")
+html(lang="en")
   head
     meta(charset="UTF-8")
     meta(name="viewport", content="width=device-width, initial-scale=1.0")
     meta(http-equiv="X-UA-Compatible", content="ie=edge")
-
     title Portfolio | main page
   body
     .wrapper
-      .container
-        .fullscreen-section
+      .maincontent.fullscreen-section
+        section.section.main
           section.paralax
             .layer(data-speed='0').first
             .layer(data-speed='5').second
             .layer(data-speed='10').third
-          section.section.main
+          section.maincontent
             include ./layout/header.pug
-            include ./layout/maincontent.pug
+            include ./layout/mainTitle.pug
             include ./layout/scroll.pug
-          section.section.aboutme
-            include ./layout/about.pug
+        section.section.aboutme
+          include ./layout/aboutme.pug
         section.section.skills
-          .content__skills
-            include ./layout/skills.pug
+          include ./layout/skills.pug
         section.section.contact
-          .content__contact
-            include ./layout/contact.pug
-          .pic_leaves
-            .pic_layer(data-speed='10')
-              +image('content/img/leaves_4.png', '')
-            .pic_layer(data-speed='60')
-              +image('content/img/leaves_2.png', '')
-            .pic_layer(data-speed='30')
-              +image('content/img/leaves_3.png', '')
-            .pic_layer(data-speed='50')
-              +image('content/img/leaves_1.png', '')
+          include ./layout/contact.pug
         footer.footer
           include ./layout/footer.pug
-          

@@ -1,7 +1,7 @@
 header.header
   .header__logo
     a(href='index.html')
-        span TA
+      span TA
   .header__btns
     .header__menu
       nav.nav
@@ -22,13 +22,15 @@ header.header
             a.nav__link(href='#6' alt='Ссылка на страницу Отзывы' data-title='Отзывы')
               | Отзывы
           li.nav__item
-            a.nav__link(href='#7' alt='Ссылка на страницу обратная связь' data-title='Связаться')
+            a.nav__link(href='#7' alt='Ссылка на страницу обратная связь' data-title='Обратная связь')
               | Обратная связь
-    .header_right
-        ul.socials
-            li.socials__item
-              .icon-insta
-            li.socials__item
-              .icon-vk
-            li.socials__item
-              .icon-git
+    ul.socials
+      li.socials__item
+        .icon-insta
+      li.socials__item
+        .icon-vk
+      li.socials__item
+        .icon-git
+    .header__links
+      a.menu-link(onclick='openMenu()')
+        .menu-link__bars

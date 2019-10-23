@@ -1,12 +1,12 @@
-.footer_content
-  .footer_content__year
-    | © 2019
-  .footer_content__personal_info
-    .footer_fio
-      | Томилин Аркадий
-    .footer_position
-      | Личный сайт
-      | веб-разработчика
+.footer-content
+  .footer-content__left
+    .footer-content__year
+      | © 2019
+    .footer-content__personal-info
+      .footer-content__fio
+        | Томилин Аркадий
+      .footer-content__position
+        | Личный сайт веб-разработчика
   .footer__right
     .header__menu.header__menu--footer
       nav.nav
@@ -30,25 +30,31 @@
             a.nav__link(href='#7' alt='Ссылка на страницу обратная связь' data-title='Связаться')
               | Обратная связь
     .footer__right--down
-      .basement_left
-        .basement_left__text
+      .basement-left
+        .basement-left__text
           | Этот сайт я сделал в рамках обучения в Школе онлайн образования Loftschool
-        .basement_left__social
-          ul.socials
+        .basement-left__social
+          ul.socials.socials--footer
             li.socials__item.socials__item--footer
-              svg.percentage(viewbox='0 0 100 100', preserveaspectratio='none').percentage--footer
-                circle.skill__circle.skill__circle_under(cx='50', cy='50', r='40')
-                  .icon-insta.icon-insta--footer
+              a.socials__link(href='index.html')
+                svg.percentage--footer(viewbox='0 0 100 100', preserveaspectratio='none')
+                  circle.skill__circle(cx='50', cy='50', r='40')
+                    .overlay-footer
+                      .icon-insta.icon--footer
             li.socials__item.socials__item--footer
-              svg.percentage(viewbox='0 0 100 100', preserveaspectratio='none').percentage--footer
-                circle.skill__circle.skill__circle_under(cx='50', cy='50', r='40')
-                  .icon-vk.icon-vk--footer
+              a.socials__link(href='index.html')
+                svg.percentage--footer(viewbox='0 0 100 100', preserveaspectratio='none')
+                  circle.skill__circle(cx='50', cy='50', r='40')
+                    .overlay-footer
+                      .icon-vk.icon--footer
             li.socials__item.socials__item--footer
-              svg.percentage(viewbox='0 0 100 100', preserveaspectratio='none').percentage--footer
-                circle.skill__circle.skill__circle_under(cx='50', cy='50', r='40')
-                  .icon-git.icon-git--footer
-      .basement_right
-        .basement_right__text
+              a.socials__link(href='index.html')
+                svg.percentage--footer(viewbox='0 0 100 100', preserveaspectratio='none')
+                  circle.skill__circle(cx='50', cy='50', r='40')
+                    .overlay-footer
+                      .icon-git.icon--footer
+      .basement-right
+        .basement-right__text
           | Всегда пишите код так, будто сопровождать его будет склонный к насилию психопат, который знает где вы живете
-        .basement_right__fio
+        .basement-right__fio
           | Martin Golding

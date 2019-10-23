@@ -1,63 +1,83 @@
-.skills_left
-  +image('content/img/hands.png', 'user-pic')
-.skills_right
-  .title.title__small.title__small--skill
-    | Чем я могу быть полезен вам
-  .subtitle.subtitle--skills
-    | Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите, как тут всё классно и красиво!
-  .skills_container
-    .title.title__small.title__small--skill
-      | Front-end
-    ul.skills__progress_bar
-      li.skills__content
-        svg.percentage(viewbox='0 0 100 100', preserveaspectratio='none')
-          circle.skill__circle.skill__circle_under(cx='50', cy='50', r='40')
-          circle.skill__circle.skill__circle_above(cx='50', cy='50', r='40', style='animation-delay: -10s')
-        .skills__subtitle
-          | HTML5
-      li.skills__content
-        svg.percentage(viewbox='0 0 100 100', preserveaspectratio='none')
-          circle.skill__circle.skill__circle_under(cx='50', cy='50', r='40')
-          circle.skill__circle.skill__circle_above(cx='50', cy='50', r='40', style='animation-delay: -30s')
-        .skills__subtitle
-          | CSS3
-      li.skills__content
-        svg.percentage(viewbox='0 0 100 100', preserveaspectratio='none')
-          circle.skill__circle.skill__circle_under(cx='50', cy='50', r='40')
-          circle.skill__circle.skill__circle_above(cx='50', cy='50', r='40', style='animation-delay: -50s')
-        .skills__subtitle
-          | Javascript
-      li.skills__content
-        svg.percentage(viewbox='0 0 100 100', preserveaspectratio='none')
-          circle.skill__circle.skill__circle_under(cx='50', cy='50', r='40')
-          circle.skill__circle.skill__circle_above(cx='50', cy='50', r='40', style='animation-delay: -100s')
-        .skills__subtitle
-          | Jquery
-          | и Vue.js
-    .title.title__small.title__small--skill
-      | Workflow
-    ul.skills__progress_bar
-      li.skills__content
-        svg.percentage(viewbox='0 0 100 100', preserveaspectratio='none')
-          circle.skill__circle.skill__circle_under(cx='50', cy='50', r='40')
-          circle.skill__circle.skill__circle_above(cx='50', cy='50', r='40', style='animation-delay: -10s')
-        .skills__subtitle
-          | GIT
-      li.skills__content
-        svg.percentage(viewbox='0 0 100 100', preserveaspectratio='none')
-          circle.skill__circle.skill__circle_under(cx='50', cy='50', r='40')
-          circle.skill__circle.skill__circle_above(cx='50', cy='50', r='40', style='animation-delay: -30s')
-        .skills__subtitle
-          | Terminal
-      li.skills__content
-        svg.percentage(viewbox='0 0 100 100', preserveaspectratio='none')
-          circle.skill__circle.skill__circle_under(cx='50', cy='50', r='40')
-          circle.skill__circle.skill__circle_above(cx='50', cy='50', r='40', style='animation-delay: -50s')
-        .skills__subtitle
-          | Gulp
-      li.skills__content
-        svg.percentage(viewbox='0 0 100 100', preserveaspectratio='none')
-          circle.skill__circle.skill__circle_under(cx='50', cy='50', r='40')
-          circle.skill__circle.skill__circle_above(cx='50', cy='50', r='40', style='animation-delay: -100s')
-        .skills__subtitle
-          | Webpack
+.content__skills
+  .skills-left
+    +image('content/img/hands.png', 'user-pic')
+  .skills-right
+    .skills-right__title
+      | Чем я могу быть полезен вам
+    .skills-right__subtitle
+      | Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите, как тут всё классно и красиво!
+    ul.competence
+      li.competence__item
+        .competence-row
+          .competence-row__title
+            | Front-end
+          ul.competence-row__list
+            li.competence-row__item
+              .skill
+                svg.percentage(viewbox='0 0 100 100', preserveaspectratio='none')
+                  circle.skill__circle.skill__circle--under(cx='50', cy='50', r='40')
+                  circle.skill__circle.skill__circle--above(cx='50', cy='50', r='40', style='animation-delay: -10s')
+                .overlay
+                  .skill__subtitle
+                    | HTML5
+            li.competence-row__item
+              .skill
+                svg.percentage(viewbox='0 0 100 100', preserveaspectratio='none')
+                  circle.skill__circle.skill__circle--under(cx='50', cy='50', r='40')
+                  circle.skill__circle.skill__circle--above(cx='50', cy='50', r='40', style='animation-delay: -30s')
+                .overlay
+                  .skill__subtitle
+                    | CSS3
+            li.competence-row__item
+              .skill
+                svg.percentage(viewbox='0 0 100 100', preserveaspectratio='none')
+                  circle.skill__circle.skill__circle--under(cx='50', cy='50', r='40')
+                  circle.skill__circle.skill__circle--above(cx='50', cy='50', r='40', style='animation-delay: -50s')
+                .overlay
+                  .skill__subtitle
+                    | JS
+            li.competence-row__item
+              .skill
+                svg.percentage(viewbox='0 0 100 100', preserveaspectratio='none')
+                  circle.skill__circle.skill__circle--under(cx='50', cy='50', r='40')
+                  circle.skill__circle.skill__circle--above(cx='50', cy='50', r='40', style='animation-delay: -80s')
+                .overlay
+                  .skill__subtitle
+                    | Jquery и Vue.js
+      li.competence__item
+        .competence-row
+          .competence-row__title
+            | Workflow
+          ul.competence-row__list
+            li.competence-row__item
+              .skill
+                svg.percentage(viewbox='0 0 100 100', preserveaspectratio='none')
+                  circle.skill__circle.skill__circle--under(cx='50', cy='50', r='40')
+                  circle.skill__circle.skill__circle--above(cx='50', cy='50', r='40', style='animation-delay: -10s')
+                .overlay
+                  .skill__subtitle
+                    | GIT
+            li.competence-row__item
+              .skill
+                svg.percentage(viewbox='0 0 100 100', preserveaspectratio='none')
+                  circle.skill__circle.skill__circle--under(cx='50', cy='50', r='40')
+                  circle.skill__circle.skill__circle--above(cx='50', cy='50', r='40', style='animation-delay: -30s')
+                .overlay
+                  .skill__subtitle
+                    | Terminal
+            li.competence-row__item
+              .skill
+                svg.percentage(viewbox='0 0 100 100', preserveaspectratio='none')
+                  circle.skill__circle.skill__circle--under(cx='50', cy='50', r='40')
+                  circle.skill__circle.skill__circle--above(cx='50', cy='50', r='40', style='animation-delay: -50s')
+                .overlay
+                  .skill__subtitle
+                    | Gulp
+            li.competence-row__item
+              .skill
+                svg.percentage(viewbox='0 0 100 100', preserveaspectratio='none')
+                  circle.skill__circle.skill__circle--under(cx='50', cy='50', r='40')
+                  circle.skill__circle.skill__circle--above(cx='50', cy='50', r='40', style='animation-delay: -80s')
+                .overlay
+                  .skill__subtitle
+                    | Webpack
