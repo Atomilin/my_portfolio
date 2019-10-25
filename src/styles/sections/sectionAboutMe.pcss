@@ -5,28 +5,42 @@
     background: url(~images/content/bg/bg_2.png);
     background-repeat: no-repeat;
     background-size: cover;
+    margin-top: 400px;
+
+    @include tablets {
+        margin-top: 0;
+        padding-top: 10px;
+        padding-bottom: 155px;
+	}
+	
+	@include phones {
+        flex-direction: column;
+        padding-bottom: 100px;
+	}
 } 
 .content__about {
     position: relative;
     justify-content: center;
     display: flex;
     align-items: center;
-    margin-top: 170px;
-    margin-bottom:270px;
+    /* padding-top: 170px;
+    padding-bottom:270px; */
+    transform: translateY(-360px);
 
     @include desktop {
         margin: 0 auto;
-        margin-top: 70px;
-        margin-bottom:200px;
+        /* padding-top: 70px;
+        padding-bottom:200px; */
 	}
 	@include tablets {
-        margin-top: 10px;
-        margin-bottom: 155px;
+        transform: translateY(0);
+        padding-top: 10px;
+        padding-bottom: 155px;
 	}
 	
 	@include phones {
         flex-direction: column;
-        margin-bottom: 100px;
+        padding-bottom: 100px;
 	}
 }
 // Личная информация и фото
@@ -206,6 +220,7 @@
     font-style: italic;
     margin-top: 80px;
     margin-bottom: 0px;
+    position: relative;
 
     @include desktop {
 
@@ -228,21 +243,20 @@
     font-style: italic;
     line-height: 0.63;
     color: rgba(219, 2, 0, 0.1);
-    top: 286px;
-    left: 658px;
+    left: -42px;
     position: absolute;
 
     @include desktop {
-        left: 488px;
+       /*  left: 488px; */
 	}
 	@include tablets {
         font-size: 48px;
-        top: 232px;
-        left: 272px;
+        /* top: 232px;
+        left: 272px; */
 	}
 	
 	@include phones {
-        top: 552px;
-        left: -39px;
+        /* top: 552px;
+        left: -39px; */
 	}
 }

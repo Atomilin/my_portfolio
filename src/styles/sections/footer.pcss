@@ -246,17 +246,6 @@
 } */
 
 .nav {
-    @include desktop {
-    
-    }
-
-    @include tablets {
-        width: 81%;
-    }
-    
-    @include phones {
-    
-    }
 }
 
 .socials--footer {
@@ -264,10 +253,14 @@
 }
 
 
-.header__menu--footer {
+.footer__menu--footer {
     margin: 0;
-	
+    
+    @include tablets {
+        display: flex;
+    }
+    
 	@include phones {
-		margin: 0 90px;
+		margin: 0 80px;
 	}
 }

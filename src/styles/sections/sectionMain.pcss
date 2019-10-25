@@ -2,35 +2,42 @@
     position: relative;
     display: flex;
     flex-direction: column;
+    //align-items: center;
     height: 100vh;
 }
 
 .maincontent {
-    flex: 1;
-    position: relative;
+    padding-top: 64px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+    justify-content: space-between;
 
      @include tablets {
-         //margin: 0 auto;
+        align-items: inherit;
+        justify-content: inherit;
     }
 
     @include phones {
-        flex-direction: column;
-        align-items:center;
+        /* flex-direction: column;
+        align-items:center; */
     } 
 }
 
 // Главный текст на первой странице
 .main-title {
-    margin-top: 160px;
+    //margin-top: 160px;
     display:flex;
     justify-content: center;
     position: relative;
-    z-index: -3;
+    //z-index: -3;
 
     @include desktop {
-		margin-top: 130px;
+		//margin-top: 130px;
 	}
 	@include tablets {
+        margin-top: 130px;
         flex-direction: column;
         align-items: center;
 	}
@@ -90,8 +97,10 @@
 .arrow {
     display: flex;
     justify-content: center;
-    margin-top: 330px;
+    //margin-top: 330px;
+    width: 9%;
     z-index:2;
+
     &:hover .arrow__text{
         color:#55ddcc;
     }
@@ -100,7 +109,7 @@
     }
 
     @include desktop {
-		margin-top: 230px;
+		//margin-top: 230px;
     }
     
 	@include tablets {
@@ -118,6 +127,7 @@
     line-height: 1.67;
     color: #ffffff;
 }
+
 .arrow__icon {
     width: 40px;
     height: 40px;

@@ -1,5 +1,4 @@
 .header {
-	padding-top: 64px;
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -23,7 +22,7 @@
   align-items: center;
 }
 
-.header__menu {
+.header__menu, .footer__menu {
 	margin: 0 200px;
 	
 	@include desktop {
@@ -32,6 +31,7 @@
 	@include tablets {
 		display: none;
 	}
+
 }
 
 .header__logo {
@@ -61,7 +61,7 @@
 	}
 
 	@include phones {
-
+		justify-content: space-between;
 	}
 }
 
@@ -70,16 +70,16 @@
     align-items: center;
     margin-right: 60px;
 	&:last-child {
-		margin-right: 0rem;
+		margin-right: 0;
 	}
 
 	@include tablets {
-		width: 52px;
 		margin-bottom: 32px;
 	}
 
 	@include phones {
-		width: 52px;
+		width: 50%;
+		margin-right: 0;
 	}
 }
 

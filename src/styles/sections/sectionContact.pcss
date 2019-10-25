@@ -9,15 +9,17 @@
 
 .content__contact{
     margin-top:150px;
-    margin-left: 120px;
+   // margin-left: 120px;
+   padding: 0 30px;
+   width: 100%;
 
     @include tablets {
         margin-top: 131px;
-        margin-left: 41px;
+        //margin-left: 41px;
     }
 
     @include phones {
-		margin-left: 30px;
+		//margin-left: 30px;
         margin-top: 97px;
     }
 }
@@ -117,24 +119,24 @@
     }
 
     @include phones {
-        width: 264px;
+        //width: 264px;
         margin-top:34px;
         position: relative;
-        overflow: hidden;
+        //overflow: hidden;
     }
 }
 .review-content {
-    width: 420px;
+    width: 100%;
     display: flex;
-    margin-right: 180px;
+    //margin-right: 180px;
 
     @include tablets {
-        width: 305px;
-        margin-right: 90px;
+        width: 385px;
+        margin-right: 42px;
     }
 
     @include phones {
-
+        width: 369px;
     }
 }
 .review-content:last-child {
@@ -148,17 +150,19 @@
     opacity: 0.4;
     background: svg-load('quote.svg', fill=$text-color, width=100%, height=100%);
     background-repeat: no-repeat; 
-    margin-left: -96px;
-    position: absolute;
+    //margin-left: -96px;
+    margin-right: 10px;
+    display: flex;
+    //position: absolute;
 
     @include tablets {
-        width: 30px;
-        height: 30px;
-        margin-left: -31px;
+        width: 94px;
+        //height: 30px;
+        //margin-left: -31px;
     }
 
     @include phones {
-
+        width: 142px;
     }
 }
 
@@ -202,10 +206,10 @@
 
 .pic-leaves {
     @include tablets {
-
+        display:none;
     }
 
     @include phones {
-        display:none;
+        
     }
 }
