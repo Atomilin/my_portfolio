@@ -1,41 +1,43 @@
 .content__contact
-  .review
-    .review-title
-      | Что обо мне говорят
-    .buttons
-      button.buttons__left
-        svg.percentage-buttons(viewbox='0 0 100 100', preserveaspectratio='none')
-          circle.skill__circle.skill__circle_under(cx='50', cy='50', r='40')
-            .icon-arrow.icon-arrow--button-left
-      button.buttons__right
-        svg.percentage-buttons(viewbox='0 0 100 100', preserveaspectratio='none')
-          circle.skill__circle.skill__circle_under(cx='50', cy='50', r='40')
-            .icon-arrow.icon-arrow--button-right
-  ul.review-description
-    li.review-content
-      .review-content__desc
-        .review-content__text
-          | Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 4,5 месяца только самых тяжелых испытаний и бессонных ночей!
-        .review-content__info
-          .review-info__left
-            +image('content/avatar/avatar_2.png', 'user-pic')
-          .review-info__right
-            .review-info__fio
-              | Ковальчук Дмитрий
-            .review-info__position
-              | Основатель Loftschool
-    li.review-content
-      .review-content__desc
-        .review-content__text
-          | Этот код выдержит любые испытания. Только пожалуйста, не загружайте сайт на слишком старых браузерах
-        .review-content__info
-          .review-info__left
-            +image('content/avatar/avatar_3.png', 'user-pic')
-          .review-info__right
-            .review-info__fio
-              | Владимир Сабанцев
-            .review-info__position
-              | Преподаватель
+  .review#reviews
+    .reviews__header
+      .review-title
+        | Что обо мне говорят
+      .buttons
+        button(class="buttons__left" @click="previous()")
+          svg.percentage-buttons(viewbox='0 0 100 100', preserveaspectratio='none')
+            circle.skill__circle.skill__circle_under(cx='50', cy='50', r='40')
+              .icon-arrow.icon-arrow--button-left
+        button(class="buttons__right" @click="next()")
+          svg.percentage-buttons(viewbox='0 0 100 100', preserveaspectratio='none')
+            circle.skill__circle.skill__circle_under(cx='50', cy='50', r='40')
+              .icon-arrow.icon-arrow--button-right
+    .reviews__slaider
+      flickity(ref="flickity" :options="flickityOptions").review-description
+        li.review-content
+          .review-content__desc
+            .review-content__text
+              | Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 4,5 месяца только самых тяжелых испытаний и бессонных ночей!
+            .review-content__info
+              .review-info__left
+                +image('content/avatar/avatar_2.png', 'user-pic')
+              .review-info__right
+                .review-info__fio
+                  | Ковальчук Дмитрий
+                .review-info__position
+                  | Основатель Loftschool
+        li.review-content
+          .review-content__desc
+            .review-content__text
+              | Этот код выдержит любые испытания. Только пожалуйста, не загружайте сайт на слишком старых браузерах
+            .review-content__info
+              .review-info__left
+                +image('content/avatar/avatar_3.png', 'user-pic')
+              .review-info__right
+                .review-info__fio
+                  | Владимир Сабанцев
+                .review-info__position
+                  | Преподаватель
   .feedback
     .feedback__title
       | Связаться со мной
