@@ -1,14 +1,50 @@
-console.log('this is skills module');
+import Vue from "vue";
 
-function parallax(event) {
-    this.querySelectorAll('.layer').forEach(layer => {
-        let speed = layer.getAttribute('data-speed');
-        layer.style.transform = `translateY(${event.clientY*speed/1000}px) translateX(${event.clientX*speed/1000}px)`
-    });
-    this.querySelectorAll('.pic_layer').forEach(layer => {
-        let speed = layer.getAttribute('data-speed');
-        layer.style.transform = `translateY(${event.clientY*speed/1000}px) translateX(${event.clientX*speed/1000}px)`
-    });
-}
+const skill = {
+  template: "#skill",
+  props: {
+    skillName: String,
+    skillPercent: Number
+  },
+  methods: {
+    drawColoredCircle() {
+      const circle = this.$refs["color-circle"];
+      const dashArray = parseInt(
+        getComputedStyle(circle).getPropertyValue("stroke-dasharray")
+      );
+      const percent = (dashArray / 100) * (100 - this.skillPercent);
 
-//document.addEventListener('mousemove', parallax);
+      circle.style.strokeDashoffset = percent;
+    }
+  },
+  mounted() {
+    this.drawColoredCircle();
+  }
+};
+
+const skillsRow = {
+  template: "#skills-row",
+  components: {
+    skill
+  },
+  props: {
+    skill: Object
+  }
+};
+
+new Vue({
+  el: "#skills-component",
+  template: "#skills-list",
+  components: {
+    skillsRow
+  },
+  data() {
+    return {
+      skills: {}
+    };
+  },
+  created() {
+    const data = require("../data/skills.json");
+    this.skills = data;
+  }
+});

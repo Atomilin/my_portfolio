@@ -6,78 +6,29 @@
       | Чем я могу быть полезен вам
     .skills-right__subtitle
       | Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите, как тут всё классно и красиво!
-    ul.competence
-      li.competence__item
+    #skills-component
+      script(type="text/x-template")#skills-list
+        .values__widget-container
+          ul.competence
+            li.competence__item(v-for="skill in skills" :key="skill.skillsGroup")
+              skills-row(
+                :skill="skill"
+              )
+      script(type="text/x-template")#skills-row
         .competence-row
-          .competence-row__title
-            | Front-end
+          .competence-row__title {{skill.skillsGroup}}
           ul.competence-row__list
-            li.competence-row__item
-              .skill
-                svg.percentage(viewbox='0 0 100 100', preserveaspectratio='none')
-                  circle.skill__circle.skill__circle--under(cx='50', cy='50', r='40')
-                  circle.skill__circle.skill__circle--above(cx='50', cy='50', r='40', style='animation-delay: -10s')
-                .overlay
-                  .skill__subtitle
-                    | HTML5
-            li.competence-row__item
-              .skill
-                svg.percentage(viewbox='0 0 100 100', preserveaspectratio='none')
-                  circle.skill__circle.skill__circle--under(cx='50', cy='50', r='40')
-                  circle.skill__circle.skill__circle--above(cx='50', cy='50', r='40', style='animation-delay: -30s')
-                .overlay
-                  .skill__subtitle
-                    | CSS3
-            li.competence-row__item
-              .skill
-                svg.percentage(viewbox='0 0 100 100', preserveaspectratio='none')
-                  circle.skill__circle.skill__circle--under(cx='50', cy='50', r='40')
-                  circle.skill__circle.skill__circle--above(cx='50', cy='50', r='40', style='animation-delay: -50s')
-                .overlay
-                  .skill__subtitle
-                    | JS
-            li.competence-row__item
-              .skill
-                svg.percentage(viewbox='0 0 100 100', preserveaspectratio='none')
-                  circle.skill__circle.skill__circle--under(cx='50', cy='50', r='40')
-                  circle.skill__circle.skill__circle--above(cx='50', cy='50', r='40', style='animation-delay: -80s')
-                .overlay
-                  .skill__subtitle
-                    | Jquery и Vue.js
-      li.competence__item
-        .competence-row
-          .competence-row__title
-            | Workflow
-          ul.competence-row__list
-            li.competence-row__item
-              .skill
-                svg.percentage(viewbox='0 0 100 100', preserveaspectratio='none')
-                  circle.skill__circle.skill__circle--under(cx='50', cy='50', r='40')
-                  circle.skill__circle.skill__circle--above(cx='50', cy='50', r='40', style='animation-delay: -10s')
-                .overlay
-                  .skill__subtitle
-                    | GIT
-            li.competence-row__item
-              .skill
-                svg.percentage(viewbox='0 0 100 100', preserveaspectratio='none')
-                  circle.skill__circle.skill__circle--under(cx='50', cy='50', r='40')
-                  circle.skill__circle.skill__circle--above(cx='50', cy='50', r='40', style='animation-delay: -30s')
-                .overlay
-                  .skill__subtitle
-                    | Terminal
-            li.competence-row__item
-              .skill
-                svg.percentage(viewbox='0 0 100 100', preserveaspectratio='none')
-                  circle.skill__circle.skill__circle--under(cx='50', cy='50', r='40')
-                  circle.skill__circle.skill__circle--above(cx='50', cy='50', r='40', style='animation-delay: -50s')
-                .overlay
-                  .skill__subtitle
-                    | Gulp
-            li.competence-row__item
-              .skill
-                svg.percentage(viewbox='0 0 100 100', preserveaspectratio='none')
-                  circle.skill__circle.skill__circle--under(cx='50', cy='50', r='40')
-                  circle.skill__circle.skill__circle--above(cx='50', cy='50', r='40', style='animation-delay: -80s')
-                .overlay
-                  .skill__subtitle
-                    | Webpack
+            li.competence-row__item(v-for="(skillPercent, skillName) in skill.skills")
+              skill(
+                :skillName="skillName"
+                :skillPercent="skillPercent"
+              )
+      script(type="text/x-template")#skill
+        .skill
+          svg(viewBox="0 0 100 100").skill__circle-shape
+            circle(cx="50" cy="50" r="40").skill__circle.skill__circle_under
+            circle(cx="50" cy="50" r="40" ref="color-circle" stroke="url(#gradient)" transform='rotate(180 50 50)').skill__circle.skill__circle_above
+            linearGradient(id="gradient" x1="0%" y1="0%" x2="100%" y2="0")
+              stop(offset="0%" stop-color="#5500f2")
+              stop(offset="100%" stop-color="#8f00ef")
+          .skill__circle-text {{skillName}}
