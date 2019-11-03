@@ -1,30 +1,7 @@
 import Vue from 'vue';
-import Flickity from 'vue-flickity';
- 
+import Reviews from '../layout/vue/reviews.vue';
+
 new Vue({
-  el: "#reviews",
-  components: {
-    Flickity
-  },
-  
-  data() {
-    return {
-      flickityOptions: {
-        groupCells: true,
-        pageDots: false,
-        prevNextButtons: false,
-        resize: true
-      }
-    }
-  },
-  
-  methods: {
-    next() {
-      this.$refs.flickity.next();
-    },
-    
-    previous() {
-      this.$refs.flickity.previous();
-    }
-  }
+   el: "#review-component",
+  render: h => h(Reviews)
 });

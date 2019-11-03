@@ -93,10 +93,10 @@ new Vue({
     handleSlide(direction) {
       switch (direction) {
         case "next":
-          this.currentIndex++;
+          this.currentIndex--;
           break;
         case "prev":
-          this.currentIndex--;
+          this.currentIndex++;
           break;
       }
     }

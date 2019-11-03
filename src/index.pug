@@ -1,5 +1,5 @@
 include ./mixins.pug
-
+- var items = require('./data/reviews.json');
 <!DOCTYPE html>
 html(lang="en")
   head
@@ -29,7 +29,18 @@ html(lang="en")
             .works__content
               #slider-component 
         section.section.contact
-          include ./layout/contact.pug
+          .content__contact
+            #review-component
+            include ./layout/feedback.pug      
+          .pic-leaves
+            .pic-layer(data-speed='10')
+              +image('content/img/leaves_4.png', '')
+            .pic_layer(data-speed='60')
+              +image('content/img/leaves_2.png', '')
+            .pic_layer(data-speed='30')
+              +image('content/img/leaves_3.png', '')
+            .pic_layer(data-speed='50')
+              +image('content/img/leaves_1.png', '')
         footer.footer
           include ./layout/footer.pug
     include ./layout/works.pug

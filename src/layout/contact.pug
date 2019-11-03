@@ -1,5 +1,4 @@
-.content__contact
-  .review#reviews
+.review#reviews
     .reviews__header
       .review-title
         | Что обо мне говорят
@@ -12,58 +11,29 @@
           svg.percentage-buttons(viewbox='0 0 100 100', preserveaspectratio='none')
             circle.skill__circle.skill__circle_under(cx='50', cy='50', r='40')
               .icon-arrow.icon-arrow--button-right
-    flickity(ref="flickity" :options="flickityOptions")
-      li.review-content
-        .review-content__desc
-          .review-content__text
-            | Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 4,5 месяца только самых тяжелых испытаний и бессонных ночей!
-          .review-content__info
-            .review-info__left
-              +image('content/avatar/avatar_2.png', 'user-pic')
-            .review-info__right
-              .review-info__fio
-                | Ковальчук Дмитрий
-              .review-info__position
-                | Основатель Loftschool
-      li.review-content
-        .review-content__desc
-          .review-content__text
-            | Этот код выдержит любые испытания. Только пожалуйста, не загружайте сайт на слишком старых браузерах
-          .review-content__info
-            .review-info__left
-              +image('content/avatar/avatar_3.png', 'user-pic')
-            .review-info__right
-              .review-info__fio
-                | Владимир Сабанцев
-              .review-info__position
-                | Преподаватель
-  .feedback
-    .feedback__title
-      | Связаться со мной
-    form.form__content
-      .form__content--up
-        label.form__label
-          span.form__subtitle
-            | Введите ваше имя
-          input.form__input(type='text', placeholder='Ковальчук Дмитрий', name='name', required).form__input--user
-        label.form__label
-          span.form__subtitle
-            | Введите ваш email
-          input.form__input(type='text', placeholder='loftschool@study.com', name='phone', required).form__input--envelope
-      .form__content--down
-        label.form__label.form__content--last_child
-          span.form__subtitle
-            | Сообщение к письму
-          textarea.form__textarea.form__input(placeholder='Требуется ваша помощь в создании сайта.Интересуют сроки и цена вопроса', name='comment', required).form__input--message
-        .form__button
-          button#sendButton.button(type='submit')
-            | отправить
-.pic-leaves
-  .pic-layer(data-speed='10')
-    +image('content/img/leaves_4.png', '')
-  .pic_layer(data-speed='60')
-    +image('content/img/leaves_2.png', '')
-  .pic_layer(data-speed='30')
-    +image('content/img/leaves_3.png', '')
-  .pic_layer(data-speed='50')
-    +image('content/img/leaves_1.png', '')
+    .reviews__slaider
+      flickity(ref="flickity" :options="flickityOptions").review-description
+        li.review-content
+          .review-content__desc
+            .review-content__text
+              | Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 4,5 месяца только самых тяжелых испытаний и бессонных ночей!
+            .review-content__info
+              .review-info__left
+                +image('content/avatar/avatar_2.png', 'user-pic')
+              .review-info__right
+                .review-info__fio
+                  | Ковальчук Дмитрий
+                .review-info__position
+                  | Основатель Loftschool
+        li.review-content
+          .review-content__desc
+            .review-content__text
+              | Этот код выдержит любые испытания. Только пожалуйста, не загружайте сайт на слишком старых браузерах
+            .review-content__info
+              .review-info__left
+                +image('content/avatar/avatar_3.png', 'user-pic')
+              .review-info__right
+                .review-info__fio
+                  | Владимир Сабанцев
+                .review-info__position
+                  | Преподаватель
