@@ -3,15 +3,11 @@
    .reviews__header
      .review-title
        | Что обо мне говорят
-     .buttons
-       button(class="buttons__left" @click="previous()")
-         svg.percentage-buttons(viewbox='0 0 100 100', preserveaspectratio='none')
-           circle.skill__circle.skill__circle_under(cx='50', cy='50', r='40')
-             .icon-arrow.icon-arrow--button-left
-       button(class="buttons__right" @click="next()")
-         svg.percentage-buttons(viewbox='0 0 100 100', preserveaspectratio='none')
-           circle.skill__circle.skill__circle_under(cx='50', cy='50', r='40')
-             .icon-arrow.icon-arrow--button-right
+     .reviews__controls
+       .reviews__control
+         button(class="button_around button_deg" @click="previous()" ref="button-prev")
+       .reviews__control
+         button(class="button_around" @click="next()" ref="button-next")
    .reviews__slider
      flickity(ref="flickity" :options="flickityOptions").reviews-slider__list
        .review-content(v-for="item in reviews")
