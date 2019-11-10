@@ -7,7 +7,7 @@
               h3.work-content__text Редактирование работы
             .work-info
                 .load
-                  .load__text Перетащите изображение в область загрузки или нажмите на кнопку "загрузить" для добавления изображения
+                  .load__text Перетащите или загрузите для загрузки изображения
                   button.load__btn Загрузить
                 .work__form
                   form.form(@submit.prevent="sendForm")                    
@@ -82,7 +82,7 @@ export default {
             return this.validation.firstError('work.tag')
         },
     },
-  methods: {
+/*   methods: {
     async sendForm() {
       const success = await this.$validate();
       console.log("success", success);
@@ -92,13 +92,13 @@ export default {
         console.log("Ошибка в заполнении формы!");
       }
     }
-  }
+  } */
 };
 </script>
 
 <style lang='postcss'>
 .works {
-  background-image: linear-gradient(180deg, #222427, #3d3f42);;
+  background-color: rgba(255, 255, 255, 0.9);
   min-height: 1169px;
 }
 .works__container {
@@ -113,6 +113,7 @@ export default {
 }
 .work-info {
   display: flex;
+  justify-content: space-around;
   @media screen and (max-width: 1143px) {
     flex-direction: column;
     justify-content: center;
@@ -120,10 +121,10 @@ export default {
   }
 }
 .work-content {
-  width: 1080px;
+  width: 100%;
   min-height: 775px;
   background-color: white;
-  box-shadow: 0 10px 5px rgba(110, 110, 110, 0.3);
+  box-shadow: 4.1px 2.9px 20px 0 rgba(0, 0, 0, 0.07);
   @media screen and (max-width: 1143px) {
     width: 708px;
   }
@@ -132,7 +133,7 @@ export default {
   }
 }
 .work-content__title {
-  width: 1040px;
+  width: 97%;
   margin-left: 20px;
   display: flex;
   height: 73px;
@@ -152,14 +153,14 @@ export default {
 .load {
   width: 500px;
   height: 280px;
-  background-color: #fcd097;
+  background-color: #dee4ed;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   margin-top: 50px;
   margin-left: 30px;
-  border: 2px dotted #f59416;
+  border: dashed 1px #a1a1a1;
   @media screen and (max-width: 748px) {
     width: 95%;
     margin-left: 0px;
@@ -169,13 +170,13 @@ export default {
   width: 350px;
   text-align: center;
   margin-bottom: 30px;
-  color: #f59416;
+  color: #414c63;
   @media screen and (max-width: 748px) {
     width: 228px;
   }
 }
 .load__btn {
-  background-image: linear-gradient(108deg, #222427, #d7861f);
+  background-image: linear-gradient(to right, #006aed, #3f35cb);
   width: 180px;
   height: 55px;
   border-radius: 40px;
@@ -222,7 +223,7 @@ export default {
   }
   display: block;
   &-title {
-    color: black;
+    color: rgba(65, 76, 99, 0.5);
     font-weight: 600;
     font-size: 16px;
   }
@@ -245,7 +246,7 @@ export default {
   font-weight: 600;
   font-size: 16px;
   &:placeholder {
-    color: #babdc4;
+    color: #414c63;
     font-weight: 600;
     font-size: 16px;
   }
@@ -267,7 +268,7 @@ export default {
   justify-content: flex-end;
 }
 .btn-save {
-  background-image: linear-gradient(108deg, #222427, #d7861f);
+  background-image: linear-gradient(to right, #006aed, #3f35cb);
   width: 180px;
   height: 55px;
   border-radius: 40px;
@@ -282,8 +283,7 @@ export default {
 }
 .btn-cancel {
   background: transparent;
-  color: #d7861f;
-  text-transform: uppercase;
+  color: #383bcf;
   font-weight: 600;
   font-size: 16px;
 }

@@ -1,19 +1,19 @@
 <template lang="pug">
   header.header
-        .container.header__container
-          .header__left
-            .user
-              img.user__pic(src='../../images/content/user.jpg')
-              .user__name Аркадий Томилин
-            .admin-name Панель администрирования
-          .header__right
-            a(href="#").exit Выйти
+    .container.header__container
+      .header__left
+        .user
+          img.user__pic(src='../../images/content/user.jpg')
+          .user__name Аркадий Томилин
+        .admin-name Панель администрирования
+      .header__right
+        a(href="#").exit Выйти
 </template>
 
 <style lang="postcss">
 .header {
   height: 80px;
-  background-image: linear-gradient(90deg, #222427 60%, #d7861f);
+  background-image: linear-gradient(to right, #3e3e59, #454573);
   display: flex;
 }
 .header__container {
@@ -52,7 +52,8 @@
   }
 }
 .exit {
-  color: #222427;
   font-size: 16px;
+  line-height: 1.5;
+  color: rgba(255, 255, 255, 0.7);
 }
 </style>

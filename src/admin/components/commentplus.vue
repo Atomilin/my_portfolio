@@ -1,27 +1,27 @@
 <template lang="pug">
-    section.comment-plus
-      .container.comment-plus__container 
-        .comment-add 
-          button.comment-add__btn +
-          h3.comment-add__title Добавить работу
-        .adds-comment
-          .adds-comment__user
-            .adds-comment__img 
-              img.adds-comment__img-pic(src='../../images/content/user.jpg')
-            .adds-comment__info
-              .adds-comment__name Стэн Смит
-              .adds-comment__position Агент ЦРУ
-          .adds-comment__content            
-            .adds-comment__content-text Она была ко мне холодна, а я весь пылал... Благодаря чему в машине поддерживалась нормальная температура.           
-          .buttons.buttons-comment
-            button.btn.correct Править
-            button.btn.del Удалить
+  section.comment-plus
+    .container.comment-plus__container 
+      .comment-add 
+        button.comment-add__btn +
+        h3.comment-add__title Добавить работу
+      .adds-comment
+        .adds-comment__user
+          .adds-comment__img 
+            img.adds-comment__img-pic(src='../../images/content/user.jpg')
+          .adds-comment__info
+            .adds-comment__name Александр Никитин
+            .adds-comment__position Преподаватель
+        .adds-comment__content            
+          .adds-comment__content-text Воспользуйтесь услугами другого человека).           
+        .buttons.buttons-comment
+          button.btn.correct Править
+          button.btn.del Удалить
 </template>
 
 <style lang="postcss">
 .comment-plus {
   min-height: 600px;
-  background-image: linear-gradient(180deg, #222427, #3d3f42);
+  background-color: rgba(255, 255, 255, 0.9);
 }
 .comment-plus__container {
   display: flex;

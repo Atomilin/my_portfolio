@@ -1,25 +1,24 @@
 <template lang="pug">
-    section.login
-        .login__bg
-            .container.login__container
-                .login__block
-                    .login__block-container
-                        h2.login__block--title Авторизация
-                        form.login__form
-                            label.login__block--input
-                                .login-name Логин
-                                input.login-form.nameuser(type='text' name='name' placeholder="Admin")
-                                .login-name Пароль
-                                input.login-form(type='text' name='name' placeholder="#######")
-                            button.send отправить
-                            button.close-login
+  section.login
+    .login__bg
+      .container.login__container
+        .login__block
+          .login__block-container
+            h2.login__block--title Авторизация
+            form.login__form
+            label.login__block--input
+              .login-name Логин
+              input.login-form.nameuser(type='text' name='name' placeholder="Admin")
+              .login-name Пароль
+              input.login-form(type='text' name='name' placeholder="#######")
+          button.send отправить
+          button.close-login
 </template>
 
 <style lang="postcss">
 .login {
   min-height: 1300px;
-  background: url("../../images/content/bg/bg_4.png") center center / cover
-    no-repeat;
+  background: url("../../images/content/bg/bg_4.png") center cover no-repeat;
   position: relative;
   display: none;
 }

@@ -1,19 +1,19 @@
 <template lang="pug">
   section.work-plus
-      .container.work-plus__container 
-        .add 
-          button.add__btn +
-          h3.add__title Добавить работу
-        .adds-work
-          .adds-work__img 
-            img.adds-work__img-pic(src='../../images/content/slider-1.png')   
-          .adds-work__content
-            h2.adds-work__content-title Сайт автомобильной компании
-            .adds-work__content-text Дизайн сайта и вёрстка были разработаны для автосалона Автотрейд АГ
-            a.adds-work__content-link https://loftschool.com
-          .buttons 
-            button.btn.correct Править
-            button.btn.del Удалить
+    .container.work-plus__container 
+      .add 
+        button.add__btn +
+        h3.add__title Добавить работу
+      .adds-work
+        .adds-work__img 
+          img.adds-work__img-pic(src='../../images/content/slider-1.png')   
+        .adds-work__content
+          h2.adds-work__content-title Сайт автомобильной компании
+          .adds-work__content-text Дизайн сайта и вёрстка были разработаны для автосалона Автотрейд АГ
+          a.adds-work__content-link https://loftschool.com
+        .buttons 
+          button.btn.correct Править
+          button.btn.del Удалить
 </template>
 
 <style lang="postcss">

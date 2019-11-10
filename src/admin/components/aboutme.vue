@@ -21,30 +21,9 @@
                       .pe-tr 
                         a.pencil
                         a.trash
-
-                    li.skill 
-                      input.skill__imput(type='text' name='name' required='' placeholder="")
-                      input.skill__percent(type='text' name='name' required='' placeholder="")
-                      .pe-tr 
-                        a.pencil
-                        a.trash
-
-                    li.skill 
-                      input.skill__imput(type='text' name='name' required='' placeholder="")
-                      input.skill__percent(type='text' name='name' required='' placeholder="")
-                      .pe-tr 
-                        a.pencil
-                        a.trash
-
-                    li.skill 
-                      input.skill__imput(type='text' name='name' required='' placeholder="")
-                      input.skill__percent(type='text' name='name' required='' placeholder="")
-                      .pe-tr 
-                        a.pencil
-                        a.trash
               .newskill
                 input.newskill__imput(type='text' name='name' required='' placeholder="Новый навык")
-                input.newskill__percent(type='text' name='name' required='' placeholder="%")
+                input.newskill__percent(type='text' name='name' required='' placeholder="100%")
                 button.plus           
 </template>
 
@@ -60,7 +39,7 @@ export default {
 
 <style lang="postcss">
 .aboutme {
-  background-image: linear-gradient(180deg, #222427, #3d3f42);
+  background-color: rgba(255, 255, 255, 0.9);
   min-height: 1258px;
 }
 .aboutme__control {
@@ -75,7 +54,7 @@ export default {
   }
 }
 .aboutme__control-btn {
-  color: #d7861f;
+  color: #383bcf;
   background: transparent;
   font-weight: 600;
   font-size: 16px;
@@ -85,7 +64,7 @@ export default {
   &::before {
     content: "+";
     color: white;
-    background-image: linear-gradient(108deg, #222427, #d7861f);
+    background-image: linear-gradient(to right, #006aed, #3f35cb);
     width: 20px;
     height: 20px;
     border-radius: 50%;
@@ -114,10 +93,9 @@ export default {
 .aboutme__content-workflow,
 .aboutme__content-frontend {
   width: 525px;
-  height: 390px;
   background-color: white;
   margin-right: 30px;
-  box-shadow: 0 10px 5px rgba(110, 110, 110, 0.3);
+  box-shadow: 4.1px 2.9px 20px 0 rgba(0, 0, 0, 0.07);
   &:last-child {
     margin-left: 0px;
   }
@@ -136,9 +114,11 @@ export default {
 }
 .container-newgroup {
   width: 483px;
+  min-height: 385px;
   margin-left: 20px;
   display: flex;
   flex-direction: column;
+  justify-content: space-around;
   @media screen and (max-width: 768px) {
     width: 305px;
   }
@@ -153,11 +133,10 @@ export default {
 }
 .newskill {
   display: flex;
-  margin-bottom: 220px;
-  margin-left: 36px;
-  margin-right: 30px;
-  align-items: flex-end;
-  justify-content: flex-end;
+  margin-bottom: 35px;
+  //margin-left: 36px;
+  align-items: center;
+  justify-content: space-around;
 }
 .plus {
   background: transparent;
@@ -168,7 +147,7 @@ export default {
   &::before {
     content: "+";
     color: white;
-    background-image: linear-gradient(108deg, #222427, #d7861f);
+    background-image: linear-gradient(to right, #006aed, #3f35cb);
     width: 40px;
     height: 40px;
     border-radius: 50%;
@@ -183,11 +162,11 @@ export default {
 .newgroup__imput,
 .newskill__imput,
 .newskill__percent {
-  margin-left: 30px;
+  //margin-left: 30px;
   background: none;
   border: transparent;
   border-bottom: 1px solid black;
-  padding: 20px 8px;
+  padding: 0px 8px;
   width: 274px;
   height: 63px;
   color: black;
@@ -196,6 +175,7 @@ export default {
   background-position: 7px 12px;
   &::placeholder {
     color: #adb0b8;
+    vertical-align: bottom;
   }
   &:focus {
     border-bottom: 1px solid #3e3e59;
@@ -216,7 +196,8 @@ export default {
   }
 }
 .newskill__imput {
-  width: 218px;
+  //width: 218px;
+  font-size: 16px;
   @media screen and (max-width: 768px) {
     width: 100px;
     margin-left: 0px;
@@ -281,7 +262,7 @@ export default {
   background: none;
   border: transparent;
   width: 270px;
-  eight: 25px;
+  height: 25px;
   margin-bottom: 28px;
   color: black;
   outline: none;

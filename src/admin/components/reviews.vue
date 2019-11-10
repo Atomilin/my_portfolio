@@ -1,37 +1,35 @@
 <template lang="pug">
-    section.comment  
-      .container.comment__container          
-        h2.title.comment-title Блок "Отзывы"
-        .comment-content
-          router-link(to="/myworks")
-            a Работы
-          .comment-content__title
-            h3.comment-content__text Новый отзыв
-          .comment-info
-            .userpic
-              .userpic__photo-container
-                .userpic__avatar
-              button.userpic__btn Добавить фото
-            .comment__form
-                  form.form(@submit.prevent="commentForm")                    
-                      .form__row.form__row-rewiews
-                          label.form__block.form__block-rewiewsup 
-                              div.form__block-title Имя автора
-                              input.form__imput.nameuser(type='text' name='name' v-model="comment.name" placeholder="Иван Иванов")
-                              span.error {{this.validation.firstError('comment.name')}}
-                          label.form__block.form__block-rewiews 
-                              div.form__block-title Титул автора
-                              input.form__imput.posts(type='text' name='name' v-model="comment.posts" placeholder="Старший NPC")
-                              span.error {{this.validation.firstError('comment.posts')}}
-                      .form__row.form__row-rewiew                    
-                          label.form__block.form__comments
-                              div.form__block-title Отзыв
-                              textarea.form__imput.form__imput--texteria.comments(name='comment' v-model="comment.comments" placeholder="Очень доволен вёрсткой сайта")
-                              span.error {{this.validation.firstError('comment.comments')}}                    
-                      .form__row.form__row-btn
-                          .form__btn
-                            button#order.btn-cancel Отмена                          
-                            button#order.btn-save Сохранить  
+  section.comment  
+    .container.comment__container          
+      h2.title.comment-title Блок "Отзывы"
+      .comment-content
+        .comment-content__title
+          h3.comment-content__text Новый отзыв
+        .comment-info
+          .userpic
+            .userpic__photo-container
+              .userpic__avatar
+            button.userpic__btn Добавить фото
+          .comment__form
+            form.form(@submit.prevent="commentForm")                    
+              .form__row.form__row-rewiews
+                label.form__block.form__block-rewiewsup 
+                    div.form__block-title Имя автора
+                    input.form__imput.nameuser(type='text' name='name' v-model="comment.name" placeholder="Иван Иванов")
+                    span.error {{this.validation.firstError('comment.name')}}
+                label.form__block.form__block-rewiews 
+                    div.form__block-title Титул автора
+                    input.form__imput.posts(type='text' name='name' v-model="comment.posts" placeholder="Должность")
+                    span.error {{this.validation.firstError('comment.posts')}}
+              .form__row.form__row-rewiew                    
+                label.form__block.form__comments
+                    div.form__block-title Отзыв
+                    textarea.form__imput.form__imput--texteria.comments(name='comment' v-model="comment.comments" placeholder="Комментарий")
+                    span.error {{this.validation.firstError('comment.comments')}}                    
+              .form__row.form__row-btn
+                .form__btn
+                  button#order.btn-cancel Отмена                          
+                  button#order.btn-save Сохранить  
 </template>
 
 
@@ -74,7 +72,7 @@ export default {
             return this.validation.firstError('comment.comments')
         }        
     },
-  methods: {
+/*   methods: {
     async commentForm() {
       const success = await this.$validate();
       console.log("success", success);
@@ -84,13 +82,13 @@ export default {
         console.log("Ошибка в заполнении формы!");
       }
     }
-  }
+  } */
 };
 </script>
 
 <style lang="postcss">
 .comment {
-  background-image: linear-gradient(180deg, #222427, #3d3f42);
+  background-color: rgba(255, 255, 255, 0.9);
   min-height: 850px;
 }
 .comment__container {
@@ -105,16 +103,17 @@ export default {
 }
 .comment-info {
   display: flex;
+  justify-content: space-around;
   @media screen and (max-width: 748px) {
     flex-direction: column;
     align-items: center;
   }
 }
 .comment-content {
-  width: 1080px;
+  width: 100%;
   min-height: 510px;
   background-color: white;
-  box-shadow: 0 10px 5px rgba(110, 110, 110, 0.3);
+  box-shadow: 4.1px 2.9px 20px 0 rgba(0, 0, 0, 0.07);
   @media screen and (max-width: 1143px) {
     width: 708px;
   }
@@ -123,7 +122,7 @@ export default {
   }
 }
 .comment-content__title {
-  width: 1040px;
+  width: 97%;
   margin-left: 20px;
   display: flex;
   height: 73px;
@@ -163,7 +162,7 @@ export default {
 }
 .userpic__avatar {
   content: svg-load(
-    "../../images/icons/avatar.svg" width=113px,
+    "../../images/icons/user.svg" width=113px,
     height=113px,
     fill=#fff
   );
@@ -173,7 +172,7 @@ export default {
   font-size: 16px;
   text-align: center;
   background-color: transparent;
-  color: #d7861f;
+  color: #383bcf;
   text-align: center;
 }
 .comment__form {

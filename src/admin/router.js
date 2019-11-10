@@ -1,11 +1,10 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
-
 Vue.use(VueRouter);
 
 import aboutme from './components/aboutme.vue';
 import workVue from './components/adminworks.vue';
-import commentVue from './components/comment.vue';
+import reviewsVue from './components/reviews.vue';
 
 const routes = [    
     {
@@ -19,8 +18,8 @@ const routes = [
     },
 
     {
-        path: '/comments',
-        component: commentVue
+        path: '/reviews',
+        component: reviewsVue
     },    
 ];
 

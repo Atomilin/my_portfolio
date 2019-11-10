@@ -101,6 +101,6 @@ img {
 .title {
   font-weight: 700;
   font-size: 36px;
-  color: white;
+  color: #414c63;
 }
 </style>

@@ -1,28 +1,35 @@
 <template lang="pug">
   section.navigation
-        .container.navigation__container                   
-            - var section = [{"text": 'Обо мне', 'link': "/"}, {"text": 'Работы', 'link': "/myworks"}, {"text": 'Отзывы', 'link': "/comments"}]
-              nav.nav        
-                ul.nav__list          
-                  each sec in section                  
-                    li.nav__item                                                                                             
-                      router-link(tag="button" to=sec.link :data-text="Кнопка") 
+        .container.navigation__container       
+            nav.tabs        
+              ul.tabs__list
+                li.tabs__item(v-for="tab in tabs")
+                  router-link(
+                    :data-text="tab.title" 
+                    :to="tab.href"
+                    exact-active-class="active"
+                  ).tabs__link
 
 </template>
 
+<script>
+export default {
+  data() {
+    return {
+      tabs: [
+        { title: "Обо мне", href: "/aboutme" },
+        { title: "Работы", href: "/myworks" },
+        { title: "Отзывы", href: "/reviews" }
+      ]
+    };
+  }
+};
+</script>
+
 <style lang="postcss">
-.router-link-active {
-  width: 20px;
-  height: 10px;
-  background-color: blue;
-}
-.router-link-exact-active {
-  width: 20px;
-  height: 10px;
-  background-color: blue;
-}
 .navigation {
-  background-color: #fcd097;
+  background-color: #ffffff;
+  color: #414c63;
 }
 .navigation__container {
   height: 75px;
@@ -32,28 +39,40 @@
     justify-content: center;
   }
 }
-.nav {
+.tabs {
   height: 20px;
 }
-.nav__list {
-  display: flex;
+.tabs__list {
+  display: flex;   
 }
-.nav__item {
-  margin-right: 25px;
-  position: relative;
+.tabs__item {
+  height: 100%;
+  margin-right: 30px;
+  
   &:last-child {
-    margin-left: 0px;
+    margin-right: 0;
   }
-  &:hover {
-    &:after {
-      content: "";
-      height: 3px;
-      background: #d7861f;
-      display: block;
-      &:hover {
-        transition: width 0.3s ease-out;
-      }
-    }
+}
+.tabs__link {
+  vertical-align: middle;
+  white-space: nowrap;
+  display: flex;
+  height: 100%;
+  align-items: center;
+  cursor: pointer;
+  width: 125px;
+  justify-content: center;
+  border-bottom: 3px solid transparent;
+  text-decoration: none;
+  
+  &:before {
+    content: attr(data-text);
+  }
+  &:hover,
+  &.active {
+    color: #383bcf;
+    font-weight: 600;
+    border-color: currentColor;
   }
 }
 </style>
