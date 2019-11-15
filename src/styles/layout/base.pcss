@@ -18,10 +18,12 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: $text-color;
+  background-color: #222427;
 }
 
 .wrapper {
-  overflow: hidden;
+  //overflow: hidden;
+  overflow-x:hidden;
   min-height: 100%;
   position: relative;
 }
@@ -80,10 +82,24 @@ button[type="button"] {
 a {
   color: inherit;
   cursor: pointer;
+  text-decoration: none;
 }
 
 img {
   display: block;
   max-width: 100%;
-  max-height: 100%;
+  //max-height: 100%;
+}
+
+// personal styles
+
+.section {
+  //height: 100%;
+  position: relative;
+  display: flex;
+  //overflow: hidden; 
+}
+
+button {
+  background: transparent;
 }

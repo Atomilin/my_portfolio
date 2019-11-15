@@ -1,0 +1,203 @@
+.header {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	@include tablets {
+		justify-content: space-between;
+    }
+
+    @include phones {
+		//justify-content: space-between;
+    }
+}
+
+.header__btns {
+  display: flex;
+  align-items: center;
+}
+
+.header__links {
+  display: flex;
+  align-items: center;
+}
+
+.header__menu, .footer__menu {
+	margin: 0 200px;
+	
+	@include desktop {
+		margin: 0 90px;
+	}
+	@include tablets {
+		display: none;
+	}
+
+}
+
+.header__logo {
+
+    font-size: 36px;
+    font-weight: 800;
+    line-height: 0.83;
+    text-align: left;
+    color: #ffffff;
+
+	@include tablets {
+		margin-left: 25px;
+	}
+
+	@include phones {
+		margin-left: 20px;
+	}
+}
+
+.nav__list {
+	width: 100%;
+	display: flex;
+	align-items: center;
+	  
+	@include tablets {
+		flex-wrap: wrap;
+	}
+
+	@include phones {
+		justify-content: space-between;
+	}
+}
+
+.nav__item {
+	display: flex;
+    align-items: center;
+    margin-right: 60px;
+	&:last-child {
+		margin-right: 0;
+	}
+
+	@include tablets {
+		margin-bottom: 32px;
+	}
+
+	@include phones {
+		width: 50%;
+		margin-right: 0;
+	}
+}
+
+.nav__link {
+	transition: .5s;
+	white-space: pre;
+	text-decoration: none;
+	font-size: 16px;
+	font-weight: normal;
+	font-style: normal;
+	font-stretch: normal;
+	line-height: 1.88;
+	letter-spacing: normal;
+	color: #ffffff;
+	&:hover {
+		transition: .5s;
+		font-weight: 600;
+	}
+	&:before{
+		content: attr(data-title);
+		font-weight: 600;
+		height: 0;
+		overflow: hidden;
+		visibility: hidden;
+		display: block;
+	}
+}
+
+/*соц.сети*/
+
+.socials {
+    top: 50%;
+    display: flex;
+	align-items: center;
+	
+	@include tablets {
+
+    }
+
+    @include phones {
+		display: none;
+    }
+}
+  
+.socials__item {
+    margin-right: 40px;
+}
+
+.socials__item:last-child {
+    margin-right: 0;
+}
+  
+/* .socials__link {
+    display: inline-block;
+    max-width: 23px;
+    max-height: 20px;
+    opacity: .3;
+    transition: .3s;
+    &:hover {
+      opacity: 1;
+    }
+} */
+  
+/* .socials__link-icon {
+    width: 25px;
+    height: 25px;
+} */
+
+// меню для адаптива
+
+.header__links {
+	display: flex;
+	align-items: center;
+}
+
+.menu-link {
+	display: none;
+
+	@include tablets {
+		display: flex;
+		vertical-align: middle;
+		position: relative;
+		height: 22px;
+		align-items: center;
+		margin-left: 90px;
+		margin-right: 40px;
+	}
+
+	@include phones {
+		display: flex;
+		vertical-align: middle;
+		position: relative;
+		height: 22px;
+		align-items: center;
+		margin-left: 30px;
+		margin-right: 24px;
+	}
+}
+
+.menu-link__bars {
+	&, &:before, &:after {
+		background: #fff;
+		width: 24px;
+		height: 5px;
+		border-radius: 3px;
+	}
+
+	&:before, &:after {
+		content: "";
+		display: block;
+		position: absolute;
+	}
+
+	&:before {
+		top: 0;
+	}
+
+	&:after {
+		bottom: 0;
+	}
+}

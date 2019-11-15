@@ -1,5 +1,5 @@
 include ./mixins.pug
-
+- var items = require('./data/reviews.json');
 <!DOCTYPE html>
 html(lang="en")
   head
@@ -9,7 +9,38 @@ html(lang="en")
     title Portfolio | main page
   body
     .wrapper
-      .maincontent
-        +image('content/user.jpg', 'user-pic')
-        +icon('link', 'link-class')
-        .icon-bg
+      .fullscreen-section
+        section.section.main
+          section.paralax
+            .layer(data-speed='0').first
+            .layer(data-speed='5').second
+            .layer(data-speed='10').third
+          section.maincontent
+            include ./layout/header.pug
+            include ./layout/mainTitle.pug
+            include ./layout/scroll.pug
+        section.section.aboutme
+          include ./layout/aboutme.pug
+        section.section.skills
+          include ./layout/skills.pug
+        section.works
+          .container.works__container
+            .section-title.works__section-title Мои работы
+            .works__content
+              #slider-component 
+        section.section.contact
+          .content__contact
+            #review-component
+            include ./layout/feedback.pug      
+          .pic-leaves
+            .pic-layer(data-speed='10')
+              +image('content/img/leaves_4.png', '')
+            .pic_layer(data-speed='60')
+              +image('content/img/leaves_2.png', '')
+            .pic_layer(data-speed='30')
+              +image('content/img/leaves_3.png', '')
+            .pic_layer(data-speed='50')
+              +image('content/img/leaves_1.png', '')
+        footer.footer
+          include ./layout/footer.pug
+    include ./layout/works.pug

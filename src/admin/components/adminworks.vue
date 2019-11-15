@@ -1,0 +1,290 @@
+<template lang="pug">
+  section.works
+       .container.works__container          
+          h2.title.works-title Блок "Работы"
+          .work-content
+            .work-content__title
+              h3.work-content__text Редактирование работы
+            .work-info
+                .load
+                  .load__text Перетащите или загрузите для загрузки изображения
+                  button.load__btn Загрузить
+                .work__form
+                  form.form(@submit.prevent="sendForm")                    
+                      .form__row
+                          label.form__block
+                              div.form__block-title Название
+                              input.form__imput.nameuser(type='text' name='name' v-model="work.title" placeholder="Дизайн автомобильного сайта")
+                              span.error {{this.validation.firstError('work.title')}}
+                          label.form__block
+                              div.form__block-title Ссылка
+                              input.form__imput.posts(type='text' name='name' v-model="work.link" placeholder="ivan@mail.ru")
+                              span.error {{this.validation.firstError('work.link')}}
+                      .form__row                        
+                          label.form__block.form__comments
+                              div.form__block-title Описание
+                              textarea.form__imput.form__imput--texteria.comments(name='comment' v-model="work.comment" placeholder="Дизайн сайта и вёрстка были разработаны для автосалона Автотрейд АГ")
+                              span.error {{this.validation.firstError('work.comment')}}
+                      .form__row
+                          label.form__block
+                              div.form__block-title Добавление тега
+                              input.form__imput.nameuser(type='text' name='name' v-model="work.tag" placeholder="HTML, CSS")
+                              span.error {{this.validation.firstError('work.tag')}}
+                      .form__row.form__row-btn
+                          .form__btn
+                            button#order.btn-cancel Отмена                          
+                            button#order.btn-save Сохранить
+</template>
+
+<script>
+import Vue from 'vue';
+import SimpleVueValidation from 'simple-vue-validator';
+const Validator = SimpleVueValidation.Validator;
+import axios from "axios";
+export default {
+  data:function() {
+    return {
+      work: {
+        title: '',
+        link: '',
+        comment: '',
+        tag: ''
+      },
+      works: []
+    };
+  },
+  
+  validators: {
+    "work.title": function(value) {
+      return Validator.value(value).required("Заполните название");
+    },
+    "work.link": function(value) {
+      return Validator.value(value).required("Укажите ссылку");
+    },
+    "work.comment": function(value) {
+      return Validator.value(value).required("Добавьте описание");
+    },
+    "work.tag": function(value) {
+      return Validator.value(value).required("Добавьте тег");
+    }
+  },
+   computed: {
+        titleError() {
+            return this.validation.firstError('work.title')
+        },
+        linkError() {
+            return this.validation.firstError('work.link')
+        },
+        commentError() {
+            return this.validation.firstError('work.comment')
+        },
+        tagError() {
+            return this.validation.firstError('work.tag')
+        },
+    },
+/*   methods: {
+    async sendForm() {
+      const success = await this.$validate();
+      console.log("success", success);
+      if (success) {        
+        console.log("Форма заполнена!");
+      } else {
+        console.log("Ошибка в заполнении формы!");
+      }
+    }
+  } */
+};
+</script>
+
+<style lang='postcss'>
+.works {
+  background-color: rgba(255, 255, 255, 0.9);
+  min-height: 1169px;
+}
+.works__container {
+  padding-top: 61px;
+  display: flex;
+  flex-direction: column;
+}
+.works-title {
+  font-weight: 600;
+  font-size: 21px;
+  margin-bottom: 61px;
+}
+.work-info {
+  display: flex;
+  justify-content: space-around;
+  @media screen and (max-width: 1143px) {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+}
+.work-content {
+  width: 100%;
+  min-height: 775px;
+  background-color: white;
+  box-shadow: 4.1px 2.9px 20px 0 rgba(0, 0, 0, 0.07);
+  @media screen and (max-width: 1143px) {
+    width: 708px;
+  }
+  @media screen and (max-width: 748px) {
+    width: 100%;
+  }
+}
+.work-content__title {
+  width: 97%;
+  margin-left: 20px;
+  display: flex;
+  height: 73px;
+  border-bottom: 1px solid #adb0b8;
+  @media screen and (max-width: 1143px) {
+    width: 678px;
+  }
+  @media screen and (max-width: 748px) {
+    width: 88%;
+  }
+}
+.work-content__text {
+  font-weight: 600;
+  font-size: 18px;
+  padding-top: 30px;
+}
+.load {
+  width: 500px;
+  height: 280px;
+  background-color: #dee4ed;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 50px;
+  margin-left: 30px;
+  border: dashed 1px #a1a1a1;
+  @media screen and (max-width: 748px) {
+    width: 95%;
+    margin-left: 0px;
+  }
+}
+.load__text {
+  width: 350px;
+  text-align: center;
+  margin-bottom: 30px;
+  color: #414c63;
+  @media screen and (max-width: 748px) {
+    width: 228px;
+  }
+}
+.load__btn {
+  background-image: linear-gradient(to right, #006aed, #3f35cb);
+  width: 180px;
+  height: 55px;
+  border-radius: 40px;
+  color: white;
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: 16px;
+}
+</style>
+
+<style lang="postcss">
+.form {
+  padding-bottom: 20px;
+}
+.work__form {
+  min-width: 505px;
+  margin-top: 50px;
+  margin-left: 20px;
+  @media screen and (max-width: 748px) {
+    min-width: inherit;
+    width: 95%;
+    margin-left: 0px;
+  }
+}
+.form__row {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+  &:last-child {
+    margin-bottom: 0px;
+  }
+  &-btn {
+    @media screen and (max-width: 1143px) {
+      align-items: center;
+    }
+  }
+}
+.form__block {
+  flex: 1;
+  margin-top: 15px;
+  &:first-child {
+    margin-top: 0px;
+  }
+  display: block;
+  &-title {
+    color: rgba(65, 76, 99, 0.5);
+    font-weight: 600;
+    font-size: 16px;
+  }
+}
+.form__comments {
+  margin-bottom: 20px;
+  margin-right: 0px;
+}
+.form__imput {
+  background: none;
+  border: transparent;
+  border-bottom: 1px solid black;
+  padding: 20px 0px;
+  width: 100%;
+  height: 63px;
+  color: black;
+  outline: none;
+  background-repeat: no-repeat;
+  background-position: 7px 12px;
+  font-weight: 600;
+  font-size: 16px;
+  &:placeholder {
+    color: #414c63;
+    font-weight: 600;
+    font-size: 16px;
+  }
+  &:focus {
+    border-bottom: 1px solid #3e3e59;
+  }
+  &--texteria {
+    resize: none;
+    height: 150px;
+    padding: 20px 8px;
+    border: 1px solid rgb(168, 165, 165);
+    color: #414c63;
+    font-weight: 600;
+    font-size: 16px;
+  }
+}
+.form__btn {
+  display: flex;
+  justify-content: flex-end;
+}
+.btn-save {
+  background-image: linear-gradient(to right, #006aed, #3f35cb);
+  width: 180px;
+  height: 55px;
+  border-radius: 40px;
+  color: white;
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: 16px;
+  margin-left: 60px;
+  @media screen and (max-width: 748px) {
+    margin-left: 10px;
+  }
+}
+.btn-cancel {
+  background: transparent;
+  color: #383bcf;
+  font-weight: 600;
+  font-size: 16px;
+}
+</style>
